@@ -14,16 +14,16 @@ cd src
 
 del /q ..\bin\%FNAME_JAR%
 
-rmdir /s /q class
-mkdir       class
+rmdir /s /q classes
+mkdir       classes
 
 rem compile
-javac -d class -verbose %FNAME_MAIN%
+javac -d classes -encoding UTF-8 -verbose %FNAME_MAIN%
 
 rem build *.jar file
-jar cvfm ..\bin\%FNAME_JAR% MATE-INFO/MANIFEST.MF -C class .
+jar cvfm ..\bin\%FNAME_JAR% MATE-INFO/MANIFEST.MF -C classes .
 
-rmdir /s /q class
+rmdir /s /q classes
 
 pause
 
