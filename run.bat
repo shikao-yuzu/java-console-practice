@@ -12,6 +12,7 @@ set PATH=%JDK_PATH%;%PATH%
 rem ----------------------------------------------------------------------------
 cd bin
 
+rem run *.jar file
 java -jar %FNAME_JAR%
 
 pause

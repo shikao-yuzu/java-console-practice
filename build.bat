@@ -12,17 +12,18 @@ set PATH=%JDK_PATH%;%PATH%
 rem ----------------------------------------------------------------------------
 cd src
 
+del /q ..\bin\%FNAME_JAR%
+
 rmdir /s /q class
 mkdir       class
 
+rem compile
 javac -d class -verbose %FNAME_MAIN%
 
+rem build *.jar file
 jar cvfm ..\bin\%FNAME_JAR% MATE-INFO/MANIFEST.MF -C class .
 
 rmdir /s /q class
-
-cd ../bin
-java -jar %FNAME_JAR%
 
 pause
 
